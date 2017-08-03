@@ -1,0 +1,40 @@
+" in order to make your local setting works
+" copy this file and rename it as vimrc.local
+" add your vimrc configurations here
+set lines=35 columns=118
+
+"----------------------------
+"工作目录变更
+"----------------------------
+ let g:Work = "~/tmp"
+ let g:Jfs = "F:/server/script"
+ let g:Jfc = g:Work."/test/"
+ let g:Skynet = "E:/wucloud/skynet-master/skynet-master"
+ let g:Test = g:Jfs
+ let g:Lemonc_path = "F:/lemon/trunk/src/client/windev/script"
+ let g:Lemons_path = "F:/lemon/trunk/server/script"
+ let g:Server = "F:/server"
+
+ "--------------------------------
+ "交换文件目录
+ "--------------------------------
+ "set directory=/tmp/.
+
+ function! Cw(dir)
+     execute ":cd  ".a:dir
+ endfunction
+call Cw(Test)
+
+command! Jfs call Cw(Test)
+command! Skynet call Cw(Skynet)
+command! Lemonc call Cw(Lemonc_path)
+command! Lemons call Cw(Lemons_path)
+command! Server call Cw(Server)
+
+" 设置字体 以及中文支持
+if has("win32")
+ "set guifont=Inconsolata:h20:gbk2312
+  set guifont=Inconsolata:h14
+
+endif
+
