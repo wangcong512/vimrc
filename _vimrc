@@ -3,7 +3,7 @@
 " Version: 1.0
 " ----------------------------------------------------------------------------
 
-"set nocompatible
+set nocompatible
 
 "Load plugins
 if filereadable(expand("~/.vim/vimrc.before"))
@@ -23,7 +23,9 @@ if filereadable(expand($VIM.'/vimrc.bundles'))
 endif
 
 filetype plugin indent on
-syntax enable
+
+
+"syntax enable
 syntax on
 
 colorscheme gruvbox
@@ -107,7 +109,7 @@ set completeopt=longest,menu " behaviour of insert mode completion
 set wildmenu                 " auto complete command
 set wildignore=**.o,*~,.swp,*.bak,*.pyc,*.class " Ignore compiled files
 
-set viminfo='10,%,<500 " Remember info about open buffers on close
+set viminfo='10,<10 " Remember info about open buffers on close
 set magic      " For regular expressions turn magic on
 
 set backspace=eol,start,indent               " Configure backspace so it acts as it should act
@@ -175,7 +177,7 @@ map <C-c> "+y
 
 " use <C-V> to paste yanked content
 map <C-v> "+gp
-imap <C-v> "+gp
+imap <C-v><c-r> +gp
 
 " Use CTRL-S for saving, also in Insert mode  
 noremap <C-S>        :update<CR>  

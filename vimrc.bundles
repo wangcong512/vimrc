@@ -19,7 +19,7 @@ set completeopt=longest,menu "behaviour of insert mode completion
 " :PlugInstall!    update
 " :PlugClean       remove plugin not in list
 " ----------------------------------------------------------------------------
-Bundle 'VundleVim/Vundle.vim'
+"Bundle 'VundleVim/Vundle.vim'
 
 " display
 Bundle 'Valloric/MatchTagAlways'
@@ -83,13 +83,13 @@ Bundle 'morhetz/gruvbox'
 
 " search
 Bundle 'ctrlpvim/ctrlp.vim'
-"Bundle 'tacahiroy/ctrlp-funky'
+Bundle 'tacahiroy/ctrlp-funky'
 "Bundle 'j5shi/ctrlp_bdelete.vim'
-"Bundle 'dyng/ctrlsf.vim', {'on': '<Plug>CtrlSFVwordExec'}
-"Bundle 'ggVGc/vim-fuzzysearch'
+Bundle 'dyng/ctrlsf.vim', {'on': '<Plug>CtrlSFVwordExec'},{'on': '<Plug>CtrlSFCwordPath'}
+Bundle 'ggVGc/vim-fuzzysearch'
 Bundle 'rking/ag.vim'
-
-Bundle 'xolox/vim-lua-ftplugin'
+"Bundle 'xolox/vim-misc'
+"Bundle 'xolox/vim-lua-ftplugin'
 
 " javascript
 "Plug 'pangloss/vim-javascript'
@@ -191,6 +191,8 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 " ctrlsf.vim
 " ----------------------------------------------------------------------------
 vmap <Leader>s <Plug>CtrlSFVwordExec
+nmap <Leader>s <Plug>CtrlSFCwordPath
+nmap <Leader>so :CtrlSFToggle<Cr>
 
 " ----------------------------------------------------------------------------
 " ag.vim
@@ -203,6 +205,7 @@ nnoremap <Leader><Leader>a :Ag!<space>
 " vim-fuzzysearch
 " ----------------------------------------------------------------------------
 nnoremap <leader>f :FuzzySearch<cr>
+let g:fuzzysearch_hlsearch = 1
 
 " ----------------------------------------------------------------------------
 " vim-airline
