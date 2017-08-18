@@ -75,6 +75,7 @@ Bundle 'ruanyl/vim-fixmyjs', {'on': 'Fixmyjs'}
 Bundle 'moll/vim-bbye'
 "Bundle 'tpope/vim-fugitive' | Plug 'junegunn/gv.vim'
 Bundle 'vim-scripts/BufOnly.vim'
+"Bundle 'vim-syntastic/syntastic'
 
 " theme
 Bundle 'altercation/vim-colors-solarized'
