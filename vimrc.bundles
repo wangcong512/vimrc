@@ -45,7 +45,7 @@ Bundle 'honza/vim-snippets'
 "Bundle 'Raimondi/delimitMate'
 "Bundle 'alvan/vim-closetag'
 "Bundle 'mattn/emmet-vim'
-"Bundle 'terryma/vim-multiple-cursors'
+Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'tpope/vim-surround'
 "Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'scrooloose/nerdcommenter'
@@ -89,6 +89,7 @@ Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'dyng/ctrlsf.vim', {'on': '<Plug>CtrlSFVwordExec'},{'on': '<Plug>CtrlSFCwordPath'}
 Bundle 'ggVGc/vim-fuzzysearch'
 Bundle 'rking/ag.vim'
+Bundle 'mileszs/ack.vim'
 "Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-lua-ftplugin'
 
@@ -191,6 +192,9 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 " ----------------------------------------------------------------------------
 " ctrlsf.vim
 " ----------------------------------------------------------------------------
+if executable('ag')
+	let g:ctrlsf_ackprg = 'ag'
+endif
 vmap <Leader>s <Plug>CtrlSFVwordExec
 nmap <Leader>s <Plug>CtrlSFCwordPath
 nmap <Leader>so :CtrlSFToggle<Cr>
@@ -201,6 +205,13 @@ nmap <Leader>so :CtrlSFToggle<Cr>
 nnoremap <Leader><Leader>a :Ag!<space>
 "let g:ag_working_path_mode='r'
  let g:ag_highlight=1
+ 
+" ----------------------------------------------------------------------------
+" ack.vim
+" ----------------------------------------------------------------------------
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " ----------------------------------------------------------------------------
 " vim-fuzzysearch

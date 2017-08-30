@@ -178,9 +178,11 @@ map <C-c> "+y
 " use <C-V> to paste yanked content
 map <C-v> "+gp
 
-exe 'inoremap <script> <C-V>' paste#paste_cmd['i'] 
-exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
-imap <S-Insert> <C-V>
+imap <C-v> <C-R>+
+
+"exe 'inoremap <script> <C-V>' paste#paste_cmd['i'] 
+"exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+"imap <S-Insert> <C-V>
 
 " Use CTRL-S for saving, also in Insert mode  
 noremap <C-S>        :update<CR>  
