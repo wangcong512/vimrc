@@ -10,7 +10,7 @@ set lines=35 columns=118
  let g:Jfs = "F:/server/script"
  let g:Jfc = g:Work."/test/"
  let g:Skynet = "E:/wucloud/skynet-master/skynet-master"
- let g:Test = g:Jfs
+ let g:Test = "F:/Test3d/xlua-framework-master/Assets/LuaScripts"
  let g:Lemonc_path = "F:/lemon/trunk/src/client/windev/script"
  let g:Lemons_path = "F:/lemon/trunk/server/script"
  let g:Server = "F:/server"
@@ -33,8 +33,13 @@ command! Server call Cw(Server)
 
 " 设置字体 以及中文支持
 if has("win32")
- "set guifont=Inconsolata:h20:gbk2312
-  set guifont=Inconsolata:h14
+  "set guifont=Inconsolata:h20
+  "set guifont=Inconsolata:h14
+  "set guifont=Arial:h12
+  "set guifont=Courier:h12
+  set guifont=Courier\ New:h12
+  "set guifont=*
+  
 
 endif
 

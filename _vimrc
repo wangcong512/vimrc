@@ -18,8 +18,8 @@ let $VIMFILES = $HOME.'/.vim'
 endif
 
 "Load plugins
-if filereadable(expand($VIM.'/vimrc.bundles'))
-  source $VIM/vimrc.bundles
+if filereadable(expand($VIM.'/bundle/vimrc.bundles'))
+  source $VIM/bundle/vimrc.bundles
 endif
 
 filetype plugin indent on
@@ -28,9 +28,9 @@ filetype plugin indent on
 "syntax enable
 syntax on
 
-colorscheme gruvbox
+"colorscheme gruvbox
 "colorscheme solarized
-"colorscheme molokai
+colorscheme molokai
 "colorscheme desert
 
 set background=dark
@@ -94,11 +94,15 @@ set noshowmode     " Show current mode
 set scrolloff=7    " Set 7 lines to the cursor - when moving vertically using j/k
 
 " File encode:encode for varied filetype
-set encoding=utf-8
-set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1,chinese
+set encoding=chinese
+set fileencodings=utf-8,ucs-bom,cp936,gb18030,big5,euc-jp,euc-kr,latin1,chinese,gb2312
 set helplang=en
-set termencoding=utf-8,gbk
+set termencoding=gb2312
+set fileencoding=utf-8
 set langmenu=zh_CN.UTF-8
+set ambiwidth=double
+"解决控制台乱码
+language messages zh_CN.utf-8
 source $VIMRUNTIME/delmenu.vim 
 source $VIMRUNTIME/menu.vim
 

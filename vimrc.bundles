@@ -1,7 +1,7 @@
 " ----------------------------------------------------------------------------
 " Vim-Plug:Plgin management and setting
 " ----------------------------------------------------------------------------
-set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
+set rtp+=$VIM/bundle/Vundle.vim/
 call vundle#begin('$VIM/vimfiles/bundle/')
 
 let mapleader = ','
@@ -30,6 +30,8 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'inside/vim-search-pulse'
 Bundle 'romainl/vim-cool'
 Bundle 'henrik/vim-indexed-search'
+Bundle 'vim-scripts/winmanager'
+
 
 " fast move
 Bundle 'vim-scripts/matchit.zip'
@@ -224,8 +226,38 @@ let g:fuzzysearch_hlsearch = 1
 " ----------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#buffer_nr_show = 1
+
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
+	let g:airline#extensions#tabline#formatter = 'default'
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+if has("gui_running") && &enc == 'utf-8' && &fenc == 'utf-8'
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+else
+let g:airline_left_sep = '>'
+let g:airline_left_alt_sep = '>'
+let g:airline_right_sep = '<'
+let g:airline_right_alt_sep = '<'
+let g:airline_symbols.branch = '|'
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = 'LN'
+endif
+let g:airline_detect_paste=0
+let g:airline#extensions#default#section_truncate_width = {'b': 79, 'x': 60, 'y': 55, 'z': 45}
+let g:airline_section_z = '%3p%% %#__accent_bold#%{g:airline_symbols.linenr} %1l%#restore#:%1v'
+"let g:airline#extensions#tabline#enabled=1
+
 
 " ----------------------------------------------------------------------------
 " vim-trailing-whitespace
